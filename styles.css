@@ -249,14 +249,20 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-    .grid--1x2, .grid--1x3 {
+    .grid--1x2, .grid--1x4 {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .grid--1x3 {
+    .grid--1x4 {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .grid--1x4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -317,6 +323,11 @@ a {
     border-radius: 10px;
 }
 
+.callout--fit {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .callout--primary {
     background: var(--color-primary);
     color: #fff;
@@ -373,9 +384,14 @@ a {
     justify-content: space-evenly;
 }
 
+.collapsible__title {
+    margin: 0;
+}
+
 .collapsible__chevron {
     transform: rotate(90deg);
     transition: transform .3s;
+    align-self: center;
 }
 
 .collapsible__content {
@@ -419,22 +435,30 @@ a {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 0 1rem;
     align-items: center;
+}
+
+.nav__logo {
+    width: 80%;
+    max-width: 300px;
+    outline: none;
+    border: none;
 }
 
 .nav__list {
     width: 100%;
     margin: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .nav__item {
-    padding: 0.5rem 2rem;
-    border-bottom: 1px solid #fff;
-    text-align: right;
+    margin-bottom: 1rem;
 }
 
 .nav__item>a {
+    font-size: 2rem;
     color: #d2d0db;
     transition: color .1s;
 }
@@ -456,7 +480,7 @@ a {
 }
 
 .nav__logo>img {
-    width: 300px;
+    width: 100%;
 }
 
 .nav--main {
@@ -482,6 +506,7 @@ a {
 
     .nav__item {
         border: 0;
+        margin: 0 3rem;
     }
 
     .nav__logo>img {
@@ -657,19 +682,45 @@ a {
 }
 
 .project:hover {
-    transform: scale(110%);
+    transform: scale(1.05);
 }
 
 /* Github logo */
 
-.github-logo-container {
+.github__logo {
     align-self: center;
+    justify-self: center;
 }
 
-.github-logo {
-    transition: transform .2s ease-out;
+.github {
+
+    cursor: pointer;
 }
 
-.github-logo:hover {
-    transform: scale(1.1);
+.github:hover {
+    transform: scale(1.05);
 }
+
+/* Footer */
+
+.footer {
+    width: 100%;
+    background: var(--color-primary);
+    opacity: .5;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer__text {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Fade in on scroll class */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.2s ease-out;
+  }

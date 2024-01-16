@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+
+#container{
+    position: absolute;
+    top: 75%;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.bar{
+    background-color: white;
+}
+
+.controls {
+    display: flex;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    border: 3px solid gray;
+    border-radius: 10px;
+}
+.input-group{
+    height: 42px;
+    width: 250px;
+    border: 3px solid gray;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.input-group input {
+    width: 30px;
+    height: 100%;
+    outline: none;
+    border: none;
+    flex-grow: 1;
+}
+
+.input-group label {
+    margin: 0 10px;
+}
+

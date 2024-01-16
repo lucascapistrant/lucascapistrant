@@ -2,7 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <title>Lucas Capistrant's Portolio</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
@@ -16,7 +17,7 @@
     <div id="blur"></div>
     <nav class="nav collapsible nav--main" id="nav">
       <a class="nav__logo" href="/"
-        ><img src="images/logo.svg" alt="Site Logo"
+        ><img src="images/headerLogo.svg" alt="Site Logo"
       /></a>
       <svg class="icon icon--white nav__toggler">
         <use xlink:href="images/sprite.svg#menu"></use>
@@ -27,7 +28,7 @@
       </ul>
     </nav>
 
-    <div class="card testimonial testimonial--informal" id="main">
+    <div class="card testimonial testimonial--informal fade-in" id="main">
       <div class="grid grid--1x2">
         <div class="testimonial__image">
           <img src="images/lucas.jpeg" alt="A picture of Lucas Capistrant" />
@@ -46,32 +47,55 @@
         </div>
       </div>
     </div>
-    <div class="paragraph">
-      <h2>Projects</h2>
-      <div class="grid grid--1x3 porfolio">
-        <a href="projects/cell simulator/cell-simulator.html" class="project">
-          <img
-            class="project__img"
-            src="images/projects/cell-simulator.png"
-            alt="Cell Simulator Webpage"
-          />
-          <div class="project__desc"><p>Cell Simulator</p></div>
-        </a>
+    <div class="collapsible collapsible--paragraph">
+      <header class="collapsible__header">
+        <h2 class="collapsible__title">Projects</h2>
+        <svg class="icon icon--white collapsible__chevron nav__toggler">
+          <use xlink:href="images/sprite.svg#menu"></use>
+        </svg>
+      </header>
+      <div class="paragraph collapsible__content">
+        <div class="grid grid--1x4 porfolio">
+          <a class="project" href="projects/cell simulator/cell-simulator.html">
+            <img
+              class="project__img"
+              src="images/projects/cell-simulator.png"
+              alt="Cell Simulator Webpage"
+            />
+            <div class="project__desc"><p>Cell Simulator</p></div>
+          </a>
+          <a class="project" href="projects/pong game/index.html">
+            <img
+              class="project__img"
+              src="images/projects/ponggame.png"
+              alt="Pong Game Webpage"
+            />
+            <div class="project__desc"><p>Pong Game</p></div>
+          </a>
+          <a class="project" href="projects/sortingAlgorithm/sortingalg.html">
+            <img
+              class="project__img"
+              src="images/projects/sortingalg.png"
+              alt="Sorting Algorithm Webpage"
+            />
+            <div class="project__desc"><p>Sorting Algorithm</p></div>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="paragraph paragraph--split">
+    <a
+      class="paragraph paragraph--split fade-in github"
+      id="github"
+      target="_blank"
+      href="https://github.com/lucascapistrant"
+    >
       <div class="paragraph__text">
-        Want to see more? You can view the code and see some other smaller
+        Want to see more? You can view my code and see some other smaller
         projects on my GitHub account.
       </div>
-      <a
-        target="_blank"
-        class="github-logo-container"
-        href="https://github.com/lucascapistrant"
-        ><img src="images/github.svg" class="github-logo" alt="GitHub Logo"
-      /></a>
-    </div>
-    <div class="paragraph">
+      <img class="github__logo" src="images/github.svg" alt="GitHub Logo" />
+    </a>
+    <div class="paragraph fade-in">
       <h2 id="info" class="paragraph__heading">Information</h2>
       <h3 class="paragraph__subheading">Experience</h3>
       <div class="paragraph__text">
@@ -93,7 +117,7 @@
         </p>
       </div>
     </div>
-    <div class="paragraph">
+    <div class="paragraph fade-in">
       <h3 class="paragraph__subheading subheading--collapse">
         My capabilities include:
       </h3>
@@ -106,7 +130,7 @@
         <li class="list__item">Basic Search Engine Optimization</li>
       </ul>
     </div>
-    <div class="paragraph">
+    <div class="paragraph fade-in">
       <h3 class="paragraph__subheading">Education</h3>
       <p class="paragraph__text">
         I pursued my education through a series of paid online courses on
@@ -137,7 +161,7 @@
         cleanliness and efficiency.
       </p>
     </div>
-    <div class="collapsible collapsible--paragraph">
+    <div class="collapsible collapsible--paragraph fade-in">
       <header class="collapsible__header">
         <h4 class="paragraph__subheading">Course Certificates</h4>
         <svg class="icon icon--white collapsible__chevron nav__toggler">
@@ -183,7 +207,7 @@
       </div>
     </div>
 
-    <div class="callout callout--secondary" id="page-end">
+    <div class="callout callout--secondary callout--fit fade-in">
       <div class="grid grid--1x2">
         <div class="callout__content">
           <h2 class="callout__heading">How can I reach out?</h2>
@@ -199,6 +223,13 @@
         </div>
       </div>
     </div>
+
+    <footer class="footer">
+      <p class="footer__text">
+        This website was made without any libraries, templates, or website
+        builders.
+      </p>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>
