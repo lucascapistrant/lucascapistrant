@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <title>Lucas Capistrant | About</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="body--margin">
+    <nav class="nav collapsible nav--main" id="nav">
+      <img class="nav__logo" src="images/headerLogo.svg" alt="Site Logo" />
+      <svg class="icon icon--white nav__toggler">
+        <use xlink:href="images/sprite.svg#menu"></use>
+      </svg>
+      <ul class="list nav__list collapsible__content">
+        <li class="nav__item" id="nav-main"><a href="index.html">Home</a></li>
+        <li class="nav__item" id="nav-info">
+          <a href="information.html">About Me</a>
+        </li>
+        <li class="nav__item" id="nav-projects">
+          <a href="projects.html">Projects</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="grid grid--1x2 porfolio">
+      <a
+        class="project"
+        href="projects/cell simulator/index.html"
+        target="_blank"
+      >
+        <img
+          src="images/projects/cell-simulator.png"
+          alt="Cell Simulator Webpage"
+          class="project__img"
+        />
+        <div class="project__info">
+          <header class="project__header">
+            <h3 class="project__title">Cell Simulator</h3>
+            <div class="project__date">December 2023</div>
+          </header>
+          <div class="project__description">
+            This project simulatates a three-layered ecosystem and focuses on how the organisms interact with each other. 
+          </div>
+          <div class="project__languages">
+            <img class="project__lang-icon" src="images/languages/javascript-logo.png" alt="JavaScript Logo"></img>
+            <img class="project__lang-icon" src="images/languages/html-logo.png" alt="HTML Logo"></img>
+            <img class="project__lang-icon" src="images/languages/css-logo.png" alt="CSS Logo"></img>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

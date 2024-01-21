@@ -16,15 +16,18 @@
     <div id="mouse-effect"></div>
     <div id="blur"></div>
     <nav class="nav collapsible nav--main" id="nav">
-      <a class="nav__logo" href="/"
-        ><img src="images/headerLogo.svg" alt="Site Logo"
-      /></a>
+      <img class="nav__logo" src="images/headerLogo.svg" alt="Site Logo" />
       <svg class="icon icon--white nav__toggler">
         <use xlink:href="images/sprite.svg#menu"></use>
       </svg>
       <ul class="list nav__list collapsible__content">
-        <li class="nav__item" id="nav-main"><a>Main</a></li>
-        <li class="nav__item" id="nav-info"><a>Info</a></li>
+        <li class="nav__item" id="nav-main"><a href="index.html">Home</a></li>
+        <li class="nav__item" id="nav-info">
+          <a href="information.html">About Me</a>
+        </li>
+        <li class="nav__item" id="nav-projects">
+          <a href="projects.html">Projects</a>
+        </li>
       </ul>
     </nav>
 
@@ -38,7 +41,7 @@
           <p>
             I am a high schooler and junior web developer from the United States
             with a passion for programming. I run in track and cross country,
-            but when I'm home I spend my free time coding, creating websites
+            but when I'm home I spend my free time coding and creating websites
             like these. I have been coding for two years, honing skills in
             <span class="emphasis">JavaScript</span>,
             <span class="emphasis">HTML</span>, and
@@ -47,54 +50,6 @@
         </div>
       </div>
     </div>
-    <div class="collapsible collapsible--paragraph">
-      <header class="collapsible__header">
-        <h2 class="collapsible__title">Projects</h2>
-        <svg class="icon icon--white collapsible__chevron nav__toggler">
-          <use xlink:href="images/sprite.svg#menu"></use>
-        </svg>
-      </header>
-      <div class="paragraph collapsible__content">
-        <div class="grid grid--1x4 porfolio">
-          <a class="project" href="projects/cell simulator/cell-simulator.html">
-            <img
-              class="project__img"
-              src="images/projects/cell-simulator.png"
-              alt="Cell Simulator Webpage"
-            />
-            <div class="project__desc"><p>Cell Simulator</p></div>
-          </a>
-          <a class="project" href="projects/pong game/index.html">
-            <img
-              class="project__img"
-              src="images/projects/ponggame.png"
-              alt="Pong Game Webpage"
-            />
-            <div class="project__desc"><p>Pong Game</p></div>
-          </a>
-          <a class="project" href="projects/sortingAlgorithm/sortingalg.html">
-            <img
-              class="project__img"
-              src="images/projects/sortingalg.png"
-              alt="Sorting Algorithm Webpage"
-            />
-            <div class="project__desc"><p>Sorting Algorithm</p></div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <a
-      class="paragraph paragraph--split fade-in github"
-      id="github"
-      target="_blank"
-      href="https://github.com/lucascapistrant"
-    >
-      <div class="paragraph__text">
-        Want to see more? You can view my code and see some other smaller
-        projects on my GitHub account.
-      </div>
-      <img class="github__logo" src="images/github.svg" alt="GitHub Logo" />
-    </a>
     <div class="paragraph fade-in">
       <h2 id="info" class="paragraph__heading">Information</h2>
       <h3 class="paragraph__subheading">Experience</h3>
@@ -207,28 +162,17 @@
       </div>
     </div>
 
-    <div class="callout callout--secondary callout--fit fade-in">
-      <div class="grid grid--1x2">
-        <div class="callout__content">
-          <h2 class="callout__heading">How can I reach out?</h2>
-          <p>If you would like to contact me, you can send me an Email.</p>
-        </div>
-        <div class="grid__callout-btn">
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=lucas.capistrantt45@gmail.com"
-            class="button button--accent button--block"
-            target="_blank"
-            >Email</a
-          >
-        </div>
-      </div>
-    </div>
+    <p class="footer-note">
+      This website was made without any libraries, templates, or website
+      builders.
+    </p>
 
     <footer class="footer">
-      <p class="footer__text">
-        This website was made without any libraries, templates, or website
-        builders.
-      </p>
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=lucas.capistrantt45@gmail.com"
+        class="footer__text"
+        >lucas.capistrant45@gmail.com</a
+      >
     </footer>
     <script src="main.js"></script>
   </body>

@@ -14,32 +14,14 @@ collapsibles.forEach((item) =>
 const mouseEffect = document.getElementById('mouse-effect');
 
 document.body.onpointermove = event => {
-  const {clientX, clientY} = event;
-  
-  mouseEffect.animate({
-    left: `${clientX}px`,
-    top: `${clientY}px`
-  }, {duration: 4000, fill: "forwards"})
-}
-
-// Nav buttons
-const navMainBtn = document.getElementById('nav-main');
-const navInfoBtn = document.getElementById('nav-info');
-
-navMainBtn.addEventListener('click', scrollToTop);
-navInfoBtn.addEventListener('click', scrollToInfo);
-
-function scrollToInfo() {
-  document
-    .getElementById("github")
-    .scrollIntoView({behavior: "smooth"});
-}
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  if(window.location.pathname === '/index.html') {
+    const {clientX, clientY} = event;
+    
+    mouseEffect.animate({
+      left: `${clientX}px`,
+      top: `${clientY}px`
+    }, {duration: 4000, fill: "forwards"})
+  }
 }
 
 // Fade in at scroll

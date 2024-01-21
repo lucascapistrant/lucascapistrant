@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <title>Lucas Capistrant | Projects</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="body--margin">
+    <nav class="nav collapsible nav--main" id="nav">
+      <img class="nav__logo" src="images/headerLogo.svg" alt="Site Logo" />
+      <svg class="icon icon--white nav__toggler">
+        <use xlink:href="images/sprite.svg#menu"></use>
+      </svg>
+      <ul class="list nav__list collapsible__content">
+        <li class="nav__item" id="nav-main"><a href="index.html">Home</a></li>
+        <li class="nav__item" id="nav-info">
+          <a href="information.html">About Me</a>
+        </li>
+        <li class="nav__item" id="nav-projects">
+          <a href="projects.html">Projects</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header>
+      <h2 class="section-header">Projects</h2>
+    </header>
+    <div class="grid grid--1x2 porfolio">
+      <a
+        class="project"
+        href="projects/cell simulator/index.html"
+        target="_blank"
+      >
+        <img
+          src="images/projects/cellSimulator.png"
+          alt="Cell Simulator Webpage"
+          class="project__img"
+        />
+        <div class="project__info">
+          <header class="project__header">
+            <h3 class="project__title">Cell Simulator</h3>
+            <p class="project__date">December 2023</p>
+          </header>
+          <div class="project__description">
+            Simulate a three-layered ecosystem and observe how the organisms interact with each other. 
+          </div>
+          <div class="project__languages">
+            <img class="project__lang-icon" src="images/languages/javascript-logo.png" alt="JavaScript Logo"></img>
+            <img class="project__lang-icon" src="images/languages/html-logo.png" alt="HTML Logo"></img>
+            <img class="project__lang-icon" src="images/languages/css-logo.png" alt="CSS Logo"></img>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project"
+        href="projects/city builder/city.html"
+        target="_blank"
+      >
+        <img
+          src="images/projects/cityBuilder.png"
+          alt="City Builder Webpage"
+          class="project__img"
+        />
+        <div class="project__info">
+          <header class="project__header">
+            <h3 class="project__title">City Builder</h3>
+            <p class="project__date">October 2023</p>
+          </header>
+          <div class="project__description">
+            Create a city layout and try to get as much money as possible while holding a sustanible population. 
+          </div>
+          <div class="project__languages">
+            <img class="project__lang-icon" src="images/languages/javascript-logo.png" alt="JavaScript Logo"></img>
+            <img class="project__lang-icon" src="images/languages/html-logo.png" alt="HTML Logo"></img>
+            <img class="project__lang-icon" src="images/languages/css-logo.png" alt="CSS Logo"></img>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project"
+        href="projects/pong game/index.html"
+        target="_blank"
+      >
+        <img
+          src="images/projects/ponggame.png"
+          alt="Pong Game Webpage"
+          class="project__img"
+        />
+        <div class="project__info">
+          <header class="project__header">
+            <h3 class="project__title">Pong Singleplayer</h3>
+            <p class="project__date">August 2023</p>
+          </header>
+          <div class="project__description">
+            A simple pong game with points and a highscore.
+          </div>
+          <div class="project__languages">
+            <img class="project__lang-icon" src="images/languages/javascript-logo.png" alt="JavaScript Logo"></img>
+            <img class="project__lang-icon" src="images/languages/html-logo.png" alt="HTML Logo"></img>
+            <img class="project__lang-icon" src="images/languages/css-logo.png" alt="CSS Logo"></img>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project"
+        href="projects/sortingAlgorithm/sortingalg.html"
+        target="_blank"
+      >
+        <img
+          src="images/projects/sortingalg.png"
+          alt="Sorting Algorithm Webpage"
+          class="project__img"
+        />
+        <div class="project__info">
+          <header class="project__header">
+            <h3 class="project__title">Visual Sorting Algorithm</h3>
+            <p class="project__date">June 2023</p>
+          </header>
+          <div class="project__description">
+            A simple bubble sort algorithm visualized
+          </div>
+          <div class="project__languages">
+            <img class="project__lang-icon" src="images/languages/javascript-logo.png" alt="JavaScript Logo"></img>
+            <img class="project__lang-icon" src="images/languages/html-logo.png" alt="HTML Logo"></img>
+            <img class="project__lang-icon" src="images/languages/css-logo.png" alt="CSS Logo"></img>
+          </div>
+        </div>
+      </a>
+    </div>
+    <a
+      class="paragraph paragraph--split fade-in github"
+      id="github"
+      target="_blank"
+      href="https://github.com/lucascapistrant"
+    >
+      <div class="paragraph__text">
+        Want to see more? You can view my code and see some other smaller
+        projects on my GitHub account.
+      </div>
+      <img class="github__logo" src="images/github.svg" alt="GitHub Logo" />
+    </a>
+
+    <script src="main.js"></script>
+  </body>
+</html>
