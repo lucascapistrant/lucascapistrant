@@ -18,10 +18,9 @@ body {
     color: var(--color-body);
     background: var(--color-dark-theme);
     overflow-x: hidden;
-}
-
-.body--margin {
-    margin-top: 62px;
+    position: relative;
+    min-height: 100vh;
+    padding: 70px 0;
 }
 
 #mouse-effect {
@@ -89,7 +88,7 @@ p {
 }
 
 .section-header {
-    margin: 100px 0;
+    font-size: 5rem;
     text-align: center;
 }
 
@@ -317,7 +316,7 @@ a {
     }
 
     .testimonial--informal {
-        margin: 10rem auto 0 auto;
+        margin: 0 auto;
         max-width: 1000px;
     }
 }
@@ -532,6 +531,9 @@ a {
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -564,6 +566,16 @@ a {
     display: grid;
     grid-template-rows: 1fr 1fr;
     margin: 20px auto;
+}
+
+.paragraph__img-list {
+    width: fit-content;
+    display: flex;
+    padding: 10px;
+}
+
+.paragraph__imgL-icon {
+    margin: 0 20px;
 }
 
 .paragraph--split .paragraph__text {
@@ -641,8 +653,8 @@ a {
 /* Portolio Projects */
 
 .porfolio {
-    margin-top: 10px;
     margin: 0 auto;
+    margin-top: 40px;
     gap: 20px;
 }
 
@@ -762,7 +774,8 @@ a {
     opacity: .5;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer__text {
@@ -773,6 +786,8 @@ a {
 }
 
 .footer-note {
+    margin-top: 50px;
+    padding: 0 5px;
     text-align: center;
 }
 

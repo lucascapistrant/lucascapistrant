@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="body--margin">
+  <body>
     <nav class="nav collapsible nav--main" id="nav">
       <img class="nav__logo" src="images/headerLogo.svg" alt="Site Logo" />
       <svg class="icon icon--white nav__toggler">
@@ -29,34 +29,129 @@
         </li>
       </ul>
     </nav>
-    <div class="grid grid--1x2 porfolio">
-      <a
-        class="project"
-        href="projects/cell simulator/index.html"
-        target="_blank"
-      >
-        <img
-          src="images/projects/cell-simulator.png"
-          alt="Cell Simulator Webpage"
-          class="project__img"
-        />
-        <div class="project__info">
-          <header class="project__header">
-            <h3 class="project__title">Cell Simulator</h3>
-            <div class="project__date">December 2023</div>
-          </header>
-          <div class="project__description">
-            This project simulatates a three-layered ecosystem and focuses on how the organisms interact with each other. 
-          </div>
-          <div class="project__languages">
-            <img class="project__lang-icon" src="images/languages/javascript-logo.png" alt="JavaScript Logo"></img>
-            <img class="project__lang-icon" src="images/languages/html-logo.png" alt="HTML Logo"></img>
-            <img class="project__lang-icon" src="images/languages/css-logo.png" alt="CSS Logo"></img>
-          </div>
+
+    <header>
+      <h1 class="section-header">Information</h1>
+    </header>
+    <div class="paragraph">
+      <h3 class="paragraph__subheading">Experience</h3>
+      <div class="paragraph__text">
+        <p>
+          In the early stages of my coding journey, I began learning
+          <span class="emphasis">Python</span>
+          through YouTube classes and tutorials. This laid the foundation for my
+          understanding of computer science and programming. After learning the
+          basics of Python, I began taking a course on website development,
+          where I built and grew my skills in HTML, CSS, and Javascript. Using
+          these tools, I built various small to medium-sized projects. For a
+          closer look at my work, feel free to explore my
+          <a
+            href="https://github.com/lucascapistrant"
+            target="_blank"
+            class="plug"
+            >GitHub account</a
+          >.
+        </p>
+      </div>
+    </div>
+    <div class="paragraph fade-in">
+      <h3 class="paragraph__subheading subheading--collapse">
+        My capabilities include:
+      </h3>
+      <ul class="list list--body-primary">
+        <li class="list__item">Creating structured websites in HTML</li>
+        <li class="list__item">Clean CSS</li>
+        <li class="list__item">Object Oriented Javascript</li>
+        <li class="list__item">Object Oriented CSS</li>
+        <li class="list__item">Responsive, mobile friendly websites</li>
+        <li class="list__item">Basic Search Engine Optimization</li>
+      </ul>
+    </div>
+    <div class="paragraph fade-in">
+      <h3 class="paragraph__subheading">Education</h3>
+      <p class="paragraph__text">
+        I pursued my education through a series of paid online courses on
+        <a href="https://codewithmosh.com" target="_blank" class="plug"
+          >Codewithmosh.com</a
+        >, starting with
+        <a
+          href="https://codewithmosh.com/p/the-ultimate-html-css"
+          target="_blank"
+          class="plug"
+          >The Ultimate HTML5 & CSS3 Series</a
+        >. This foundational course equipped me with a comprehensive
+        understanding of both basic and advanced website structuring and
+        styling. Building on this, I began my next endeavor,
+        <a
+          href="https://codewithmosh.com/p/ultimate-javascript-series"
+          target="_blank"
+          class="plug"
+        >
+          The Ultimate JavaScript Series </a
+        >, where I gained proficiency in Object-oriented programming in
+        Javascript. These acquired skills taught me how to craft websites that
+        are not only visually appealing but also fast and responsive. Currently,
+        I'm expanding my knowledge into backend web development. I am actively
+        enrolled in a course covering Node.js and SQL with MySQL. These courses
+        have provided valuable insights into the intricacies of web development
+        and programming, teaching me how to create websites with a focus on
+        cleanliness and efficiency.
+      </p>
+    </div>
+    <div class="collapsible collapsible--paragraph fade-in">
+      <header class="collapsible__header">
+        <h4 class="paragraph__subheading">Course Certificates</h4>
+        <svg class="icon icon--white collapsible__chevron nav__toggler">
+          <use xlink:href="images/sprite.svg#menu"></use>
+        </svg>
+      </header>
+      <div class="awards collapsible__content">
+        <div class="awards__images">
+          <a
+            href="images/certificates/certificate-of-completion-for-javascript-basics (1)-1.png"
+            class="awards__certificate"
+            target="_blank"
+          >
+            <img
+              class="awards__certificate-img"
+              src="images/certificates/certificate-of-completion-for-javascript-basics (1)-1.png"
+              alt="JavaScript Basics Certificate"
+            />
+          </a>
+          <a
+            href="images/certificates/certificate-of-completion-for-object-oriented-programming-in-javascript (1)-1.png"
+            class="awards__certificate"
+            target="_blank"
+          >
+            <img
+              class="awards__certificate-img"
+              src="images/certificates/certificate-of-completion-for-object-oriented-programming-in-javascript (1)-1.png"
+              alt="JavaScript Object-oriented programming Certificate"
+            />
+          </a>
+          <a
+            href="images/certificates/the-ultimate-html5-css3-series-part-3 (1)-1.png"
+            class="awards__certificate"
+            target="_blank"
+          >
+            <img
+              class="awards__certificate-img"
+              src="images/certificates/the-ultimate-html5-css3-series-part-3 (1)-1.png"
+              alt="The Ultimate HTML and CSS Series Certificate"
+            />
+          </a>
         </div>
-      </a>
+      </div>
     </div>
 
+    <footer class="footer">
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=lucas.capistrantt45@gmail.com"
+        class="footer__text"
+        target="_blank"
+        >lucas.capistrant45@gmail.com</a
+      >
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>
