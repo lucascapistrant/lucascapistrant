@@ -28,16 +28,13 @@ body {
     height: 300px;
     width: 300px;
     position: fixed;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
     border-radius: 50%;
     background: linear-gradient(
         to right,
         var(--color-primary),
         var(--color-secondary)
         );
-    animation: rotate 20s infinite;
+    transform: translate(-50%, -50%);
     z-index: -2;
 }
 
@@ -348,22 +345,6 @@ a {
     .nav__item {
         border: 0;
         margin: 0 3rem;
-    }
-}
-
-/* Animations */
-
-@keyframes rotate {
-    from {
-        rotate: 0deg;
-    }
-
-    50% {
-        scale: 1 1.5;
-    }
-
-    to {
-        rotate: 360deg;
     }
 }
 
