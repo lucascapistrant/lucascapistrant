@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Buider</title>
+    <link rel="stylesheet" href="/styles/cityBuilder.css" />
+    <script
+      src="https://kit.fontawesome.com/604024801b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <i class="fa-solid fa-question" id="help"></i>
+    <div id="instructions">
+      <i class="fa-solid fa-x x-icon" id="instructions__x"></i>
+      <p>
+        Welcome to Population Simulator! The point of the "game" is to try to
+        get as much money as possible, or to just experiment. Here are the basic
+        rules:
+      </p>
+      <ol>
+        <li>
+          The population increases or decreases based off of the happiness
+          meter. If the happiness meter is below 0, the population will start to
+          decrease, and the lower it gets the faster it decreases. That goes the
+          same for positive numbers, with the higher the meter the faster the
+          population will grow. Happiness is determined by if the population has
+          enough resources to support all the people living. There are two types
+          of resources needed: food and oxygen. You can see how to get those
+          resources below.
+        </li>
+        <li>
+          <p>
+            There is a 100 by 100 grid of land, and you can choose to place
+            different types of infrastructure on each one. There are four types,
+            each with their own use:
+          </p>
+          <ul>
+            <li>
+              Cities start with a population of 20,000 and will start to
+              overpopulate at 1 million. Their main function is to grow your
+              population as fast as possible and as high as possible, but they
+              cost the most.
+            </li>
+            <li>
+              Suburbs start with a population of 500 and will start to
+              overpopulate at 20,000. Their main function is to be a cheaper
+              alternative to cities, but they overpopulate faster.
+            </li>
+            <li>
+              Farms are the main way to get resources for your population. They
+              grow 10 food resources every day (2 seconds) per person living in
+              them. They cap out at 1000 people but start with 100.
+            </li>
+            <li>
+              Forests are the only way to get oxygen resources for your
+              population. Each forest holds 10,000 trees, but they also give
+              1,000 extra food resources.
+            </li>
+            <li>
+              You only start with $1,000,000 so choose your starter cells
+              wisely; if you place a city first you won't have enough money to
+              support the population with resources!
+            </li>
+          </ul>
+        </li>
+        <li>
+          Each person needs two types of resources every day: Food and Oxygen
+          (trees). You need 2 resources and 1 tree for every person in your
+          population. If there are not enough resources for each person, the
+          happiness meter will start to decrease, which could start decreasing
+          the population.
+        </li>
+        <li>
+          When cells overpopulate, they start to use extra resources. On top of
+          the resources needed per person, Additional resources will be taken
+          for extra infrastructure needed to grow the population.
+        </li>
+        <li>
+          Each cell you place cost money, and you get money from taxation on the
+          population. You can decide how much of their average income you want
+          to take, but if you raise it too high the happiness meter will start
+          to decrease.
+        </li>
+        <li>
+          You can remove a cell by clicking on it again. You will not get your
+          money back!
+        </li>
+      </ol>
+      <p>
+        Thanks for playing! Beware, this is a beginner level project, and it may
+        have multiple bugs/inconsistencies.
+      </p>
+    </div>
+    <div class="container">
+      <h1>City Simulator</h1>
+      <div class="stats">
+        <div class="stat-group">
+          <div class="tag">Population:</div>
+          <div class="value" id="population">0</div>
+        </div>
+        <div class="stat-group">
+          <div class="tag">Happieness:</div>
+          <div class="value" id="happieness">0</div>
+        </div>
+        <div class="stat-group stat-group--tall">
+          <div class="stat-group">
+            <div class="tag">Resources:</div>
+            <div class="value" id="resources">0</div>
+          </div>
+          <div class="info" id="resourceId">Resources are sustainable.</div>
+        </div>
+        <div class="stat-group">
+          <div class="tag">Money:</div>
+          <div class="value" id="money">0</div>
+        </div>
+        <div class="stat-group stat-group--slider">
+          <label class="tag" for="taxation">Tax Rate:</label>
+          <input
+            class="slider slider--stat-group"
+            type="range"
+            name="taxation"
+            id="taxation"
+            min="0"
+            max="1"
+            step=".05"
+            value=".15"
+          />
+          <div class="value" id="taxRate"></div>
+        </div>
+      </div>
+      <div id="land">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="itemSelector">
+        <div class="selector" id="city">
+          <img
+            src="/images/cityBuilder-images/city65.png"
+            alt="City"
+            class="selectorImage"
+          />
+          <p class="selectorText">City $1,000,000</p>
+        </div>
+        <div class="selector" id="suburb">
+          <img
+            src="/images/cityBuilder-images/suburb65.png"
+            alt="City"
+            class="selectorImage"
+          />
+          <p class="selectorText">Suburb $500,000</p>
+        </div>
+        <div class="selector" id="farmland">
+          <img
+            src="/images/cityBuilder-images/farm65.png"
+            alt="City"
+            class="selectorImage"
+          />
+          <p class="selectorText">Farm $10,000</p>
+        </div>
+        <div class="selector" id="forest">
+          <img
+            src="/images/cityBuilder-images/forest65.png"
+            alt="City"
+            class="selectorImage"
+          />
+          <p class="selectorText">Forest $5,000</p>
+        </div>
+      </div>
+    </div>
+    <script src="/scripts/cityBuilder.js"></script>
+  </body>
+</html>

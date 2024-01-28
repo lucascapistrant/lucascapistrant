@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A free to play website for everyones favorite clasic game... Pong! Use the arrow keys to move around a paddle and stop the ball from hitting the edge."
+    />
+    <meta name="keywords" content="game, pong, free, no ads, unblock" />
+    <title>Pong Game with Difficulty Curve</title>
+    <link rel="stylesheet" href="/styles/ponggame.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/604024801b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>Pong Game with Difficulty Curve</h1>
+    </header>
+    <div class="game-group">
+      <button id="start" title="play">
+        <i class="fa-solid fa-play"></i>
+      </button>
+      <div id="gameText"></div>
+      <canvas id="canvas" width="480" height="320"> </canvas>
+    </div>
+    <div class="game-controls">
+      <span class="point-block">
+        <p id="score">0</p>
+        <p class="descriptor">POINTS</p>
+      </span>
+      <span class="point-block">
+        <p id="highscore">0</p>
+        <p class="descriptor">HIGHSCORE</p>
+      </span>
+    </div>
+    <script src="/scripts/ponggame.js"></script>
+  </body>
+</html>

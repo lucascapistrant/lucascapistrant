@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: lightgray;
+    font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
+}
+
+/* Header */
+
+header {
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+/* Game */
+
+.game-group {
+    display: flex;
+    justify-content: center;
+}
+
+#canvas {
+    background: #000;
+    display: block;
+    margin: 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+#gameText {
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    align-self: center;
+    text-align: center;
+    color: #fff;
+    display: none;
+}
+
+/* Game controls */
+
+.game-controls {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.point-block {
+    background: #000;
+    color: #fff;
+    width: 7rem;
+    height: 5rem;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#score, #highscore {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.descriptor {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Buttons */
+
+#start {
+    width: 100px;
+    aspect-ratio: 1;
+    outline: none;
+    border: 1px solid #000;
+    font-size: 3rem;
+    background: #fff;
+    position: absolute;
+    align-self: center;
+}
+
+#start i {
+    color: #000;
+}
