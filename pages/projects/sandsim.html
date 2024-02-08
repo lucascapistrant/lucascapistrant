@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falling Sand Simulator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <link rel="stylesheet" href="/styles/sandsim.css" />
+  </head>
+  <body>
+    <div class="tool-bar">
+      <div class="input-group">
+        <label for="penSize">Stroke Size:</label>
+        <input
+          type="range"
+          name="penSize"
+          id="penSize"
+          max="100"
+          min="1"
+          value="3"
+        />
+        <div id="penSizeUI">3</div>
+      </div>
+      <div class="input-group" id="input-group--hue">
+        <label for="hue">Custom Color:</label>
+        <input type="range" name="hue" id="huePicker" max="360" min="1" />
+        <div id="hueColor">1</div>
+      </div>
+      <div class="btn-group">
+        <button class="btn-white" id="saveHue">Save Color</button>
+        <button class="btn-white" id="clearBoard">Clear Canvas</button>
+      </div>
+      <div id="colorBtnGroup">
+        <button class="colorBtn" value="120"></button>
+        <button class="colorBtn" value="1"></button>
+        <button class="colorBtn" value="240"></button>
+        <button class="colorBtn" value="60"></button>
+        <button class="colorBtn" id="rainbow"></button>
+      </div>
+      <h1>Sand Simulator</h1>
+    </div>
+  </body>
+  <script src="/scripts/sandsim.js"></script>
+</html>
