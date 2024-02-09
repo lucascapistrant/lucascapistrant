@@ -14,7 +14,7 @@ collapsibles.forEach((item) =>
 const mouseEffect = document.getElementById('mouse-effect');
 
 document.body.onpointermove = event => {
-  if(window.location.pathname === '/index.html') {
+  if(window.location.pathname === '/pages/index.html') {
     const {clientX, clientY} = event;
     
     mouseEffect.animate({
