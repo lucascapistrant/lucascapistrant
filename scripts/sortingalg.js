@@ -84,10 +84,12 @@ function init(){
   }
 }
 
+let selectedFunction = bubbleSort;
+
 function play(){
   if(!isSorting) {
     const copy = [...barArray];
-    const moves = bubbleSort(copy);
+    const moves = selectedFunction(copy);
     animate(moves);
   }
 }
@@ -115,6 +117,8 @@ function animate(moves){
   },speed);
 }
 
+// sorting algorithms
+
 function bubbleSort(barArray){
   const moves = [];
   do{
@@ -129,6 +133,42 @@ function bubbleSort(barArray){
   } while(swapped)
   return moves;
 }
+
+function quickSort(barArray) {
+  const moves = [];
+
+  function partition(low, high) {
+    const pivot = barArray[high];
+    let i = low - 1;
+
+    for (let j = low; j < high; j++) {
+      if (barArray[j] < pivot) {
+        i++;
+        moves.push({ indices: [i, j], type: "swap" });
+        [barArray[i], barArray[j]] = [barArray[j], barArray[i]];
+      }
+    }
+
+    moves.push({ indices: [i + 1, high], type: "swap" });
+    [barArray[i + 1], barArray[high]] = [barArray[high], barArray[i + 1]];
+
+    return i + 1;
+  }
+
+  function sort(low, high) {
+    if (low < high) {
+      const partitionIndex = partition(low, high);
+
+      sort(low, partitionIndex - 1);
+      sort(partitionIndex + 1, high);
+    }
+  }
+
+  sort(0, barArray.length - 1);
+
+  return moves;
+}
+
 
 
 function showBars(move){
@@ -147,3 +187,10 @@ function showBars(move){
     container.appendChild(bar);
   }
 }
+
+// dropdown menu logic
+
+const options = document.querySelectorAll('.dropdown-menu');
+
+// options.forEach
+// selectedFunction
