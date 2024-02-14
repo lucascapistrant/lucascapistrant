@@ -109,8 +109,8 @@ function animate(moves){
     [barArray[i],barArray[j]] = [barArray[j], barArray[i]];
   }
   
-  playNote(200+barArray[i]*100);
-  playNote(200+barArray[j]*100);
+  playNote(200+barArray[i]*10);
+  playNote(200+barArray[j]*10);
   showBars(move);
   setTimeout(function(){
     animate(moves);
@@ -169,6 +169,47 @@ function quickSort(barArray) {
   return moves;
 }
 
+function selectionSort(barArray){
+  const moves = [];
+  const len = barArray.length;
+
+  for(let i = 0; i < len - 1; i++){
+    let minIndex = i;
+
+    for(let j = i + 1; j < len; j++){
+      if(barArray[j] < barArray[minIndex]){
+        minIndex = j;
+      }
+    }
+
+    if(minIndex !== i){
+      moves.push({indices: [i, minIndex], type: "swap"});
+      [barArray[i], barArray[minIndex]] = [barArray[minIndex], barArray[i]];
+    }
+  }
+
+  return moves;
+}
+
+function insertionSort(barArray) {
+  const moves = [];
+  const len = barArray.length;
+
+  for (let i = 1; i < len; i++) {
+    let current = barArray[i];
+    let j = i - 1;
+
+    while (j >= 0 && barArray[j] > current) {
+      moves.push({ indices: [j, j + 1], type: "swap" });
+      barArray[j + 1] = barArray[j];
+      j--;
+    }
+
+    barArray[j + 1] = current;
+  }
+
+  return moves;
+}
 
 
 function showBars(move){
@@ -190,7 +231,28 @@ function showBars(move){
 
 // dropdown menu logic
 
-const options = document.querySelectorAll('.dropdown-menu');
+const options = document.querySelectorAll('.dropdown-option');
 
-// options.forEach
-// selectedFunction
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    if(option.value == 'bubble'){
+      selectedFunction = bubbleSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    }else if(option.value == 'quick') {
+      selectedFunction = quickSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    }else if(option.value == 'selection') {
+      selectedFunction = selectionSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    }else if(option.value == 'insertion') {
+      selectedFunction = insertionSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    } else {
+      console.error(`Option not found: "${option.value}"`);
+    }
+  })
+})
