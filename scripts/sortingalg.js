@@ -84,7 +84,7 @@ function init(){
   }
 }
 
-let selectedFunction = bubbleSort;
+let selectedFunction = combSort;
 
 function play(){
   if(!isSorting) {
@@ -211,6 +211,114 @@ function insertionSort(barArray) {
   return moves;
 }
 
+function heapify(barArray, n, i, moves) {
+  let largest = i;
+  const left = 2 * i + 1;
+  const right = 2 * i + 2;
+
+  if (left < n && barArray[left] > barArray[largest]) {
+    largest = left;
+  }
+
+  if (right < n && barArray[right] > barArray[largest]) {
+    largest = right;
+  }
+
+  if (largest !== i) {
+    moves.push({ indices: [i, largest], type: "swap" });
+    [barArray[i], barArray[largest]] = [barArray[largest], barArray[i]];
+
+    heapify(barArray, n, largest, moves);
+  }
+}
+
+function heapSort(barArray) {
+  const moves = [];
+
+  // Build max heap
+  const n = barArray.length;
+  for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+    heapify(barArray, n, i, moves);
+  }
+
+  // Heap sort
+  for (let i = n - 1; i > 0; i--) {
+    moves.push({ indices: [0, i], type: "swap" });
+    [barArray[0], barArray[i]] = [barArray[i], barArray[0]];
+    heapify(barArray, i, 0, moves);
+  }
+
+  return moves;
+}
+
+function shellSort(barArray) {
+  const moves = [];
+
+  // Determine initial gap 
+  let gap = Math.floor(barArray.length / 2);
+
+  while (gap > 0) {
+
+    // Do insertion sort for each gap
+    for (let i = gap; i < barArray.length; i++) {
+      let j = i;
+      let temp = barArray[i];
+
+      while (j >= gap && barArray[j - gap] > temp) {
+        moves.push({
+          indices: [j, j - gap],
+          type: "swap"
+        });
+        
+        barArray[j] = barArray[j - gap];
+        j -= gap;
+      }
+
+      barArray[j] = temp;
+    }
+
+    // Reduce the gap
+    gap = Math.floor(gap / 2); 
+  }
+
+  return moves;
+}
+
+function combSort(barArray) {
+  const moves = [];
+  
+  let gap = barArray.length;
+  let shrink = 1.3;
+  let sorted = false;
+
+  while (!sorted) {
+    gap = Math.floor(gap / shrink);
+    if(gap <= 1) {
+      gap = 1;
+      sorted = true; 
+    }
+    if (sorted) {
+      // Additional check
+      sorted = isSorted(barArray); 
+    }
+    
+    function isSorted(arr) {
+      for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i+1]) return false;
+      }
+      return true;
+    }
+
+    for (let i = 0; i + gap < barArray.length; i++) {
+      if (barArray[i] > barArray[i + gap]) {
+        [barArray[i], barArray[i+gap]] = [barArray[i+gap], barArray[i]]; 
+        moves.push({indices: [i, i+gap], type:"swap"});
+      }
+    }
+  }
+
+  return moves;
+}
 
 function showBars(move){
   container.innerHTML='';
@@ -249,6 +357,18 @@ options.forEach((option) => {
       option.style.backgroundColor = 'red';
     }else if(option.value == 'insertion') {
       selectedFunction = insertionSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    }else if(option.value == 'heap') {
+      selectedFunction = heapSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    }else if(option.value == 'shell') {
+      selectedFunction = shellSort;
+      options.forEach((option) => {option.style.backgroundColor = '#fff'});
+      option.style.backgroundColor = 'red';
+    }else if(option.value == 'comb') {
+      selectedFunction = combSort;
       options.forEach((option) => {option.style.backgroundColor = '#fff'});
       option.style.backgroundColor = 'red';
     } else {
