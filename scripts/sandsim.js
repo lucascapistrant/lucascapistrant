@@ -76,8 +76,6 @@ function make2DArray(cols, rows) {
 // The grid
 let grid;
 let cols, rows;
-let canvasW = 1000;
-let canvasH = 800;
 
 let hueValue = 1;
 

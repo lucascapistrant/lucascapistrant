@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="typingGame.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="endGame">Game Over</div>
+    <div id="pointPopup"></div>
+    <div class="gameUI">
+      <div id="timebar">
+        <div id="timeRemaining"></div>
+      </div>
+      <div class="UIgroup">
+        <div class="scorer">
+          <h2>POINTS:</h2>
+          <div id="points" class="score">0</div>
+        </div>
+        <div class="scorer">
+          <h2>HIGHSCORE:</h2>
+          <div id="highscore" class="score">0</div>
+        </div>
+      </div>
+    </div>
+    <div id="wordbox"></div>
+    <div class="controls">
+      <button class="button" id="start">Start</button>
+      <div class="gameModes">
+        <h2>Game Modes</h2>
+        <div class="btnGroup">
+          <button class="gameModeBtn button" value="easy">Easy</button>
+          <button
+            class="gameModeBtn button"
+            value="medium"
+            style="background-color: red; color: #fff"
+          >
+            Medium
+          </button>
+          <button class="gameModeBtn button" value="hard">Hard</button>
+        </div>
+      </div>
+    </div>
+    <script src="typingGame.js"></script>
+  </body>
+</html>

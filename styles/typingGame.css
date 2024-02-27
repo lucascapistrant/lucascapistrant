@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1rem;
+    font-family: "Grandstander", cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+button {
+    font-family: "Grandstander", cursive;
+}
+
+#wordbox {
+    border-bottom: 3px solid #000;
+    width: 80%;
+    max-width: 550px;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.letter {
+    font-size: 5rem;
+    border-radius:10px;
+}
+
+.letter-completed {
+    background: #93C572;
+    animation: pop .2s ease-in-out;
+    z-index: -1;
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(110%);
+    }
+}
+
+.letter-incorrect {
+    background: #FA5F55;
+    z-index: -1;
+}
+
+.shake {
+    animation: shake .2s ease-in-out;
+}
+
+@keyframes shake {
+    25% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+}
+
+#pointPopup {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: none;
+    font-size: 3rem;
+    font-weight: bolder;
+    /* display: flex will be added in js */
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes popup {
+    100% {
+        top: 0%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+}
+
+/* game UI */
+
+#timebar {
+    width: 100%;
+    height: 100px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+#timeRemaining {
+    height: 100%;
+    background: red;
+}
+
+.scorer {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 10px auto;
+}
+
+.UIgroup {
+    display: flex;
+}
+
+.score {
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+/* ui */
+
+#start {
+    margin: 10px auto;
+}
+
+#endGame {
+    position: absolute;
+    background: rgba(255, 0, 0, .7);
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 50px;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bolder;
+    display: none;
+}
+
+.gameModes {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.btnGroup {
+    display: flex;
+}
+
+.button {
+    width: fit-content;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.5rem;
+    border: 3px solid grey;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #999;
+}
+
+@media screen and (max-width: 400px) {
+    .btnGroup {
+        flex-direction: column;
+        align-items: center;
+    }
+}
