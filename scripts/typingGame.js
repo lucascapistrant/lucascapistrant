@@ -5,6 +5,7 @@ let health = 100;
 let healthDecrease = .1;
 let gameIsGoing = false;
 let gameMode = 'medium';
+const pointReward = 12;
 
 let points = {
     easy: 0,
@@ -39,21 +40,21 @@ function stringToSpan() {
 
 function letterUpdate(l, isCorrect) {
     const firstChild = wordbox.children[l];
-    const nextChild = wordbox.children[l+1];
     if(isCorrect === true) {
         firstChild.classList.add('letter-completed');
         firstChild.classList.remove('letter-incorrect');
     }else {
-        nextChild.classList.add('letter-incorrect');
-        nextChild.classList.add('shake');
+        firstChild.classList.add('letter-incorrect');
+        firstChild.classList.add('shake');
         setTimeout(() => {
-            nextChild.classList.remove('shake');
+            firstChild.classList.remove('shake');
           }, 200);
     }
 
 }
 
 let lettersCompeted = -1;
+let lettersIncorrect = 0;
 document.addEventListener('keydown', e => {
     if(gameIsGoing) {
         let nextLetter = letters[0];
@@ -63,7 +64,11 @@ document.addEventListener('keydown', e => {
             letters.shift();
             nextLetter = letters[0];
         } else if(e.key !== nextLetter) {
+            lettersCompeted++
+            lettersIncorrect++;
             letterUpdate(lettersCompeted, false);
+            letters.shift();
+            nextLetter = letters[0];
         }
         if(letters.length <= 0) wordComplete();
     }
@@ -73,14 +78,19 @@ const pointUI = document.getElementById('points');
 const highscoreUI = document.getElementById('highscore');
 highscoreUI.innerHTML = highscore[gameMode];
 function wordComplete() {
-    health += 10;
-    changePoints(10);
+    if(lettersIncorrect < 4) {
+        health += pointReward - lettersIncorrect;   
+        changePoints(pointReward - lettersIncorrect);
+        pointPopup(true);
+    } else {
+        pointPopup(false);
+    }
     pointUI.innerHTML = points[gameMode];
     if(health > 100) health = 100;
     lettersCompeted = -1;
+    lettersIncorrect = 0;
     wordbox.innerHTML = '';
     stringToSpan();
-    pointPopup();
 }
 
 function changePoints(add) {
@@ -92,10 +102,19 @@ function changePoints(add) {
 }
 
 const popup = document.getElementById('pointPopup');
-function pointPopup() {
+function pointPopup(wordCompleted) {
+    popup.style.animation = 'none';
+    if(wordCompleted) {
+        popup.innerHTML = `+${pointReward - lettersIncorrect}`
+    } else {
+        popup.style.background = 'red';
+        popup.innerHTML = `Word Failed!`
+        setTimeout(() => {
+            popup.style.background = 'yellow';
+        }, 900);
+    }
     popup.style.display = 'flex';
     popup.style.animation = 'popup 1s';
-    popup.innerHTML = `+10`
     setTimeout(() => {
         popup.style.display = 'none';
     }, 900);

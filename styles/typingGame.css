@@ -79,6 +79,7 @@ button {
     display: none;
     font-size: 3rem;
     font-weight: bolder;
+    text-align: center;
     /* display: flex will be added in js */
     align-items: center;
     justify-content: center;
