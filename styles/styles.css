@@ -612,10 +612,3 @@ a {
     padding: 0 5px;
     text-align: center;
 }
-
-/* Fade in on scroll class */
-
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.2s ease-out;
-  }
