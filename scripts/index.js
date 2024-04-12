@@ -12,9 +12,10 @@ collapsibles.forEach((item) =>
 
 // Mouse glow effect
 const mouseEffect = document.getElementById('mouse-effect');
+if(window.innerWidth < 480) {mouseEffect.style.display = 'none'};
 
 document.body.onpointermove = event => {
-  if(window.location.pathname === '/pages/index.html') {
+  if(window.location.pathname === '/index.html') {
     const {clientX, clientY} = event;
     
     mouseEffect.animate({

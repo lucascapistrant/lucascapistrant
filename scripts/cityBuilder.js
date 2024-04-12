@@ -1,7 +1,7 @@
 const land = document.getElementById('land');
 const cells = document.querySelectorAll('.cell');
 let typeSelected = 'forest';
-let typeUrl = 'url(/images/cityBuilder-images/forest65.png)'
+let typeUrl = 'url(../images/cityBuilder-images/forest65.png)'
 let population = 0;
 let happieness = .5;
 let resources = 0;
@@ -39,7 +39,7 @@ cells.forEach(cell => {
         if(!cell.istaken) cell.style.backgroundImage = typeUrl;
     })
     cell.addEventListener('mouseleave', () => {
-        if(!cell.istaken) cell.style.backgroundImage = 'url(/images/cityBuilder-images/grass65.png)';
+        if(!cell.istaken) cell.style.backgroundImage = 'url(../images/cityBuilder-images/grass65.png)';
     })
 });
 
@@ -86,7 +86,7 @@ function all(people, cell, type, popMax, image, price) {
             console.log(cell.istaken)
             population -= people;
             cell.innerHTML = '';
-            cell.style.backgroundImage = 'url(/images/cityBuilder-images/grass65.png)'
+            cell.style.backgroundImage = 'url(../images/cityBuilder-images/grass65.png)'
             cell.removeEventListener('click', clickevent);
         }
     }
@@ -121,10 +121,10 @@ const subrubSelector = document.getElementById('suburb');
 const farmSelector = document.getElementById('farmland');
 const forestSelector = document.getElementById('forest');
 
-citySelector.addEventListener('click', () => {typeSelected = 'city'; typeUrl = 'url(/images/cityBuilder-images/city65.png)'})
-subrubSelector.addEventListener('click', () => {typeSelected = 'suburb'; typeUrl = 'url(/images/cityBuilder-images/suburb65.png)'})
-farmSelector.addEventListener('click', () => {typeSelected = 'farmland'; typeUrl = 'url(/images/cityBuilder-images/farm65.png)'})
-forestSelector.addEventListener('click', () => {typeSelected = 'forest'; typeUrl = 'url(/images/cityBuilder-images/forest65.png)'})
+citySelector.addEventListener('click', () => {typeSelected = 'city'; typeUrl = 'url(../images/cityBuilder-images/city65.png)'})
+subrubSelector.addEventListener('click', () => {typeSelected = 'suburb'; typeUrl = 'url(../images/cityBuilder-images/suburb65.png)'})
+farmSelector.addEventListener('click', () => {typeSelected = 'farmland'; typeUrl = 'url(../images/cityBuilder-images/farm65.png)'})
+forestSelector.addEventListener('click', () => {typeSelected = 'forest'; typeUrl = 'url(../images/cityBuilder-images/forest65.png)'})
 
 // updates
 const popTab = document.getElementById('population');
