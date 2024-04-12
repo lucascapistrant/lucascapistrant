@@ -84,7 +84,7 @@ function init(){
   }
 }
 
-let selectedFunction = combSort;
+let selectedFunction = bubbleSort;
 
 function play(){
   if(!isSorting) {

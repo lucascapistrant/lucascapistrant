@@ -18,7 +18,6 @@ let points = {
 const storedHighscore = localStorage.getItem('highscore');
 let highscore = storedHighscore ? JSON.parse(storedHighscore) : {easy: 0, medium: 0, hard: 0}
 
-let preivousWord;
 function randomWord(mode) {
     if(mode === 'easy') return easyWords[Math.floor(Math.random() * (easyWords.length))];
     else if(mode === 'medium') return mediumWords[Math.floor(Math.random() * (mediumWords.length))];
