@@ -181,7 +181,7 @@ a {
     color: #fff;
 }
 
-.testimonial--informal .testimonial__image {
+.testimonial--informal .testimonial__image img {
     border-radius: 10px;
     overflow: hidden;
     align-self: center;
@@ -327,7 +327,6 @@ a {
     width: 100%;
     z-index: 3;
     top: 0;
-    border-bottom: 2px solid #fff;
 }
 
 @media screen and (min-width: 820px) {
@@ -582,6 +581,7 @@ a {
 
 .github {
     cursor: pointer;
+    transition: .1s ease-in-out;
 }
 
 .github:hover {
